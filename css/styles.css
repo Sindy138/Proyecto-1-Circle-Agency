@@ -1,0 +1,223 @@
+/*
+FUENTE INTER
+.inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+/* VARIABLES DE COLOR */
+:root {
+  /* Primary Colors */
+  --primary-blue: #072ac8; /* El azul fuerte de los botones */
+  --secondary-blue: #43d2ff; /* El azul claro/cyan */
+
+  /* Neutral / Text Colors */
+  --dark-grey: #292e47; /* El color para los títulos (H1, H2, etc.) */
+  --medium-grey: #6b708d; /* Para textos secundarios o headlines */
+  --light-grey: #f2f4fc; /* Gris muy claro (posibles fondos de sección) */
+  --soft-blue-bg: #ecf7ff; /* El azul más pálido de la derecha */
+
+  /* Accent Colors */
+  --accent-yellow: #ffc600; /* El amarillo del círculo del Hero y testimonios */
+
+  /* Extra Blue Shades (del Design System) */
+  --blue-shade-1: #a2d5f9;
+  --blue-shade-2: #d1edff;
+
+  /* White */
+  --white: #ffffff;
+}
+
+/* ESTILOS GLOBALES */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  font-size: 16px;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark-grey);
+}
+
+p {
+  color: var(--medium-grey);
+}
+
+/* MOBILE FIRST */
+/*NAVIGATION*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+}
+
+.nav-content {
+  display: none; /* Oculto por defecto en móvil */
+}
+
+.nav-content .menu {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.menu li {
+  padding-bottom: 1rem;
+}
+
+.nav-content .menu a {
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.nav-content #contact-btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+}
+
+.nav-content.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: 0;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar,
+.bar::before,
+.bar::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2.8px;
+  background-color: var(--medium-grey);
+  position: absolute;
+  transition: all 0.3s ease; /* Para que luego la animación a "X" sea fluida */
+}
+
+.bar::before {
+  top: -8px;
+}
+.bar::after {
+  top: 8px;
+}
+
+/*HERO SECTION*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.cta h3 {
+  font-weight: 300;
+}
+
+.cta-btn {
+  margin-top: 1.8rem;
+}
+.cta-btn .blue {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+}
+
+.cta-btn a {
+  text-decoration: none;
+  color: var(--medium-grey);
+  font-weight: 500;
+}
+
+/* ESTILOS PARA DESKTOP */
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0 5.5rem;
+  }
+
+  /* NAVEGACIÓN */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+  }
+
+  .menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .menu li {
+    color: var(--primary-blue);
+    cursor: pointer;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 700;
+  }
+
+  .menu li a:hover {
+    text-decoration: underline;
+  }
+
+  #contact-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* HERO SECTION */
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0;
+  }
+
+  .cta {
+    width: 50%;
+  }
+}

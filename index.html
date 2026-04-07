@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav>
-      <a href="#" id="logo"
+      <a href="/index.html" id="logo"
         ><img src="/images/logos/circle.svg" alt="Circle Agency Logo"
       /></a>
       <div class="nav-content">
@@ -23,7 +23,7 @@
           <li><a href="">Projects</a></li>
           <li><a href="">Services</a></li>
         </ul>
-        <a href="" id="contact-btn">Contact Us</a>
+        <a href="/contact.html" id="contact-btn">Contact Us</a>
       </div>
       <div class="mobile-menu">
         <button class="menu-toggle" id="mobile-menu">
@@ -49,6 +49,7 @@
         <img
           src="/images/hero-section/hero-image.png"
           alt="Image of an employee working on a project"
+          id="img-1"
         />
         <img
           src="/images/hero-section/card-1.png"
@@ -64,25 +65,25 @@
     </header>
     <section class="partners">
       <ul class="list-partners">
-        <li id="air">
+        <li class="logo-partners">
           <a href=""
             ><img src="/images/logos/airbnb-logo.svg" alt="logo Airbnb"
           /></a>
         </li>
-        <li class="goog">
+        <li class="logo-partners">
           <a href=""><img src="/images/logos/google-logo.svg" alt="" /></a>
         </li>
-        <li class="micro">
+        <li class="logo-partners">
           <a href=""
             ><img src="/images/logos/microsoft-logo.svg" alt="logo Microsoft"
           /></a>
         </li>
-        <li class="fed">
+        <li class="logo-partners">
           <a href=""
             ><img src="/images/logos/fedex-logo.svg" alt="logo FedEx"
           /></a>
         </li>
-        <li class="amazon">
+        <li class="logo-partners">
           <a href=""
             ><img src="/images/logos/amazon-logo.svg" alt="logo Amazon"
           /></a>
@@ -92,28 +93,28 @@
     <section class="recent-projects">
       <h3>Recent Projects</h3>
       <div class="container">
-        <article id="article1">
+        <article class="project-card">
           <a href=""><img src="/images/projects-section/1.jpg" alt="" /></a>
           <h4>Simplify</h4>
           <p>UI Design & App Development</p>
-          <a href="">Learn More</a>
+          <a href="/projects.html">Learn More</a>
         </article>
-        <article id="article2">
+        <article class="project-card">
           <a href=""><img src="/images/projects-section/2.jpg" alt="" /></a>
           <h4>Dashcoin</h4>
           <p>Web Development</p>
-          <a href="">Learn More</a>
+          <a href="/projects.html">Learn More</a>
         </article>
-        <article id="article3">
+        <article class="project-card">
           <a href=""><img src="/images/projects-section/3.jpg" alt="" /></a>
           <h4>Vectorify</h4>
           <p>User Experience Design</p>
-          <a href="">Learn More</a>
+          <a href="/projects.html">Learn More</a>
         </article>
       </div>
     </section>
-    <section class="testimonial">
-      <div class="container">
+    <section class="testimonials">
+      <div class="container-testimonials">
         <div class="emojis">
           <img src="/images/testimonial-section/memoji-1.png" alt="" />
           <img src="/images/testimonial-section/memoji-2.png" alt="" />
@@ -127,15 +128,20 @@
         </div>
         <div class="profile">
           <img src="/images/testimonial-section/profile.png" alt="" />
-          <h4>Kristin Watson</h4>
-          <p>Booking.com</p>
+          <div class="profile-info">
+            <h4>Kristin Watson</h4>
+            <p>Booking.com</p>
+          </div>
         </div>
       </div>
     </section>
     <section class="our-services">
+      <h3>Our Services</h3>
       <div class="container">
         <article class="service">
-          <img src="/images/services-section/1.svg" alt="" />
+          <div class="icon-circle">
+            <img src="/images/services-section/icons/1.svg" alt="" />
+          </div>
           <h4>User inteface design</h4>
           <p>
             Circle provides you with a stunning user interface design that is
@@ -144,7 +150,9 @@
           <a href="">Learn More</a>
         </article>
         <article class="service">
-          <img src="/images/services-section/2.svg" alt="" />
+          <div class="icon-circle">
+            <img src="/images/services-section/icons/2.svg" alt="" />
+          </div>
           <h4>User experience design</h4>
           <p>
             Circle always focuses on delivering the best user experience to your
@@ -153,7 +161,9 @@
           <a href="">Learn More</a>
         </article>
         <article class="service">
-          <img src="/images/services-section/3.svg" alt="" />
+          <div class="icon-circle">
+            <img src="/images/services-section/icons/3.svg" alt="" />
+          </div>
           <h4>Application development</h4>
           <p>
             We develop high-quality mobile and web applications using the latest
@@ -167,7 +177,14 @@
       <h3>Do You Have Any Questions?</h3>
       <p>Let us help you!</p>
       <form action="post" class="post-email">
-        <input type="email" placeholder="Enter your email" />
+        <div class="input-wrapper">
+          <img
+            src="/images/newsletter/icon/mail.svg"
+            alt="email icon"
+            class="input-icon"
+          />
+          <input type="email" placeholder="Enter your email" />
+        </div>
         <button type="submit">Suscribe</button>
       </form>
     </section>

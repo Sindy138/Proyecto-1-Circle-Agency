@@ -1076,8 +1076,9 @@ footer {
 @media screen and (min-width: 1024px) {
   body {
     font-size: 16px;
-    margin: 0;
-    padding: 1rem 10rem;
+    margin: 0 auto;
+    padding: 1rem 18rem;
+    max-width: 1400px;
   }
 
   /* NAVEGACIÓN */
@@ -1135,32 +1136,36 @@ footer {
   }
 
   /* HERO SECTION */
-
   .hero {
     display: flex;
     flex-direction: row;
-    padding: 5rem 0;
+    padding: 4rem 0;
+    width: 100%;
   }
 
   .cta {
     flex: 1;
     max-width: 50rem;
+    padding-right: 1rem;
   }
 
   .cta h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
+    margin-bottom: 1.3rem;
   }
 
   .cta h3 {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 450;
+    margin: 0;
   }
 
   .cta-btn {
     display: flex;
-    gap: 1rem;
+    gap: 0.4rem;
     align-items: center;
+    margin: 1.5rem 0;
   }
 
   .hero-img {
@@ -1172,7 +1177,7 @@ footer {
   }
 
   .hero-img #img-1 {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     z-index: 1;
   }
@@ -1181,22 +1186,22 @@ footer {
     display: block;
     position: absolute;
     z-index: 2;
-    width: 50%;
-    top: -3rem;
-    left: -4rem;
+    width: 60%;
+    top: -1rem;
+    left: -1.5rem;
   }
 
   .card-2 {
     display: block;
     position: absolute;
     z-index: 2;
-    width: 45%;
-    bottom: -8rem;
-    right: -1rem;
+    width: 65%;
+    bottom: -3.2rem;
+    right: -3rem;
   }
 
   /*PARTNERS SECTION*/
-  /*
+
   .partners {
     padding: 9rem 0 4rem;
     align-items: center;
@@ -1205,10 +1210,10 @@ footer {
   .list-partners {
     display: flex;
     flex-wrap: nowrap;
-    gap: 8rem;
+    gap: 3rem;
     justify-content: center;
   }
-*/
+
   /* RECENT PROJECTS SECTION */
 
   .recent-projects {
@@ -1224,10 +1229,13 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .project-card a:first-child {
-    height: 280px;
+    display: block;
+    aspect-ratio: 1 / 1;
   }
 
   /* TESTIMONIALS SECTION */
@@ -1286,7 +1294,6 @@ footer {
   }
 
   /* SERVICES SECTION */
-  /*
   .our-services {
     padding: 4rem 0;
   }
@@ -1296,10 +1303,12 @@ footer {
     margin-bottom: 3rem;
   }
 
-  .services-container {
+  .our-services .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .service {
@@ -1310,7 +1319,6 @@ footer {
     width: 4.5rem;
     height: 4.5rem;
   }
-  */
   /* NEWSLETTER SECTION */
 
   .newsletter {

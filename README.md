@@ -106,21 +106,16 @@ Formulario para que potenciales clientes se comuniquen directamente con nosotros
 Proyecto-1-Circle-Agency/
 ├── index.html              # Página de inicio
 ├── proyectos.html          # Página de proyectos
-├── proyectos/
-│   └── 1.html              # Detalle de proyecto
 ├── contacto.html           # Página de contacto
 ├── css/
 │   ├── styles.css          # Estilos globales
-│   ├── home.css            # Estilos home
-│   ├── proyectos.css       # Estilos proyectos
-│   └── contacto.css        # Estilos contacto
 ├── js/
 │   ├── main.js             # Lógica global
 │   ├── api.js              # Consumo de API
-│   ├── form-validation.js  # Validación de formularios
+│   ├── contact.js  # Validación de formularios
 │   └── utils.js            # Funciones auxiliares
-├── assets/
-│   └── images/             # Imágenes del proyecto
+├── images/
+│   └── logos/             # Imágenes del proyecto
 ├── README.md               # Este archivo
 └── .gitignore              # Archivos ignorados en Git
 ```

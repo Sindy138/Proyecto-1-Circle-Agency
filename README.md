@@ -1,7 +1,5 @@
 # Proyecto 1 - Circle Agency
 
-# Proyecto 1 - Circle Agency
-
 ## Descripción del proyecto
 
 Circle Agency es una landing page moderna y profesional para una agencia de diseño web. El sitio ofrece una experiencia de usuario fluida, intuitiva y completamente adaptada a cualquier dispositivo.

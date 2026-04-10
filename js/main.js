@@ -9,8 +9,7 @@ if (menuToggle) {
 }
 
 // INICIALIZAR FORMULARIO DE CONTACTO
-/*
+
 if (document.getElementById("contactForm")) {
   new ContactForm("contactForm");
 }
-*/

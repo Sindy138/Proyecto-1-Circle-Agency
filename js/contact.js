@@ -1,7 +1,7 @@
 /**
  * ContactForm - Manejo validación, estados de error y mensajes personalizados
  */
-/*
+
 class ContactForm {
   constructor(formId = "contactForm") {
     this.form = document.getElementById(formId);
@@ -21,7 +21,7 @@ class ContactForm {
   /**
    * Inicializa los event listeners para el formulario
    */
-  /*
+
   init() {
     this.attachEventListeners();
   }
@@ -29,7 +29,7 @@ class ContactForm {
   /**
    * Adjunta los event listeners a los campos del formulario
    */
-  /*
+
   attachEventListeners() {
     this.fields.forEach((field) => {
       // Validar al salir del campo (blur)
@@ -57,7 +57,7 @@ class ContactForm {
    * @param {HTMLElement} field - El campo a validar
    * @returns {boolean} - True si es válido, False si tiene error
    */
-  /*
+
   validateField(field) {
     const value = field.value.trim();
     const formGroup = field.closest(".form-group");
@@ -83,7 +83,7 @@ class ContactForm {
    * @param {HTMLElement} field - El campo donde mostrar el error
    * @param {string} message - El mensaje de error
    */
-  /*
+
   showError(field, message) {
     const formGroup = field.closest(".form-group");
     const errorElement = formGroup.querySelector(".error-message");
@@ -98,7 +98,7 @@ class ContactForm {
    * Limpia el error de un campo
    * @param {HTMLElement} field - El campo a limpiar
    */
-  /*
+
   clearError(field) {
     const formGroup = field.closest(".form-group");
     const errorElement = formGroup.querySelector(".error-message");
@@ -114,7 +114,7 @@ class ContactForm {
    * @param {string} email - El email a validar
    * @returns {boolean}
    */
-  /*
+
   isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -124,7 +124,7 @@ class ContactForm {
    * Valida todo el formulario
    * @returns {boolean} - True si el formulario es válido
    */
-  /*
+
   validateForm() {
     let isValid = true;
 
@@ -144,7 +144,7 @@ class ContactForm {
   /**
    * Envía el formulario (aquí se puede agregar lógica adicional)
    */
-  /*
+
   submitForm() {
     const formData = {
       name: document.getElementById("full-name").value,

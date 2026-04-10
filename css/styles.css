@@ -1,29 +1,3 @@
-/*
-FUENTE INTER
-.inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-*/
-
-/*
-  --Primary: #072ac8;
-  --PrimaryLight: #a2d6f9;
-  --PrimaryLighter: #d1edff;
-  --SecondaryLight: #fce300;
-  --SecondaryDark: #ffc600;
-  --NeutralLight: #f4f6fc;
-  --NeutralMedium: #6b708d;
-  --NeutralDark: #292e47;
-  --Wrong: #b33a3a;
-  --Right: #28a428;
-  --White: #fff;
-  --Black: #000;
-  --Background: #F2F4FC;
-*/
-
 /* VARIABLES DE COLOR */
 :root {
   /* Primary Colors */
@@ -53,6 +27,10 @@ body {
   background-color: var(--light-grey);
   margin: 0;
   padding: 0.5rem 2rem;
+  transition:
+    padding 0.5s ease,
+    max-width 0.5s ease,
+    font-size 0.5s ease;
 }
 
 h1,
@@ -119,6 +97,17 @@ nav {
   text-decoration: underline;
 }
 
+/*menú inner page*/
+
+.inner-page .menu li a {
+  color: var(--medium-grey);
+}
+
+.inner-page .menu li a:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
 .nav-content #contact-btn {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -127,6 +116,11 @@ nav {
   font-weight: 500;
   text-align: center;
   margin-top: 0;
+}
+
+.nav-content #contact-btn:hover {
+  color: var(--SecondaryLight);
+  text-decoration: none;
 }
 
 .nav-content.active {
@@ -193,7 +187,7 @@ nav {
 }
 
 .cta-btn .blue:hover {
-  color: var(--accent-yellow);
+  color: var(--SecondaryLight);
   text-decoration: none;
 }
 
@@ -518,7 +512,7 @@ nav {
   box-sizing: border-box;
 }
 
-.post-email button {
+.post-email .newsletter-btn {
   margin-top: 0.5rem;
   padding: 1.1rem 2rem;
   background-color: var(--primary-blue);
@@ -529,6 +523,11 @@ nav {
   font-weight: 400;
   cursor: pointer;
   align-self: center;
+  text-decoration: none;
+}
+
+.post-email .newsletter-btn:hover {
+  color: var(--SecondaryLight);
 }
 
 /*FOOTER*/
@@ -596,22 +595,79 @@ footer {
 
 /*BLOG SECTION - PROJECTS PAGE*/
 
-/*OTHER PROJECTS SECTION*/
+.info-project {
+  display: flex;
+  flex-wrap: wrap; /* Permite que el h1 ocupe su propia fila */
+  justify-content: space-between; /* Empuja los elementos a los extremos */
+  align-items: center;
+  width: 100%;
+}
+
+.info-project h1 {
+  color: var(--dark-grey);
+  margin-bottom: 1rem;
+  flex: 0 0 100%;
+}
+
+.info-project #subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--medium-grey);
+  margin: 0;
+}
+
+.info-project p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--dark-grey);
+  margin: 0;
+}
+
+.info-project p span {
+  font-size: 0.9rem;
+  color: var(--medium-grey);
+  margin: 0;
+}
+
+.content-blog {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-blog img {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-blog p {
+  color: var(--medium-grey);
+  font-size: 0.9rem;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.other-projects h3 {
+  color: darkblue;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
 /* CONTACT US SECTION */
 
 .contact-section {
-  padding: 3rem 2rem;
+  padding: 3rem 0;
+  width: 100%;
 }
 
 .contact-container {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 .contact-container h1 {
   margin-bottom: 3rem;
-  font-size: 2rem;
   color: var(--dark-grey);
 }
 
@@ -657,6 +713,12 @@ footer {
   font-weight: 400;
 }
 
+#contact-sub-btn {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
 /* Estado de error */
 .form-group.error input,
 .form-group.error textarea {
@@ -700,22 +762,14 @@ footer {
   background-color: #0520a8;
 }
 
-.other-projects {
-  padding: 2.5rem 2rem;
-  background-color: var(--light-grey);
-}
-
-.other-projects h3 {
-  margin-bottom: 2rem;
-}
-
 /* ESTILOS PARA TABLET (IPAD) */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   body {
-    font-size: 16px;
+    font-size: clamp(16px, 1.1vw, 18px);
     margin: 0;
-    padding: 2rem 4rem;
+    padding: 2rem clamp(5vw, 10vw, 12vw);
+    max-width: 1600px;
   }
 
   /* NAVEGACIÓN */
@@ -786,13 +840,13 @@ footer {
   }
 
   .cta h1 {
-    font-size: 2.4rem;
+    font-size: calc(1.5rem + 1.1vw);
     font-weight: 700;
     margin-bottom: 1.3rem;
   }
 
   .cta h3 {
-    font-size: 1.15rem;
+    font-size: calc(0.9rem + 0.4vw);
     font-weight: 450;
     margin: 0;
   }
@@ -813,7 +867,7 @@ footer {
   }
 
   .hero-img #img-1 {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     z-index: 1;
   }
@@ -842,10 +896,18 @@ footer {
     padding: 0;
     align-items: center;
     margin-top: 2.5rem;
+    width: 100%;
   }
 
   .list-partners {
     max-width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .logo-partners {
+    width: auto;
   }
 
   /* RECENT PROJECTS SECTION */
@@ -853,18 +915,27 @@ footer {
   .recent-projects {
     padding: 0;
     margin-top: 8rem;
+    width: 100%;
   }
 
   .recent-projects .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .project-card {
+    max-width: 320px;
+    justify-self: center;
   }
 
   .project-card:nth-child(3) {
     grid-column: 1 / -1;
     justify-self: center;
-    max-width: 40%;
+    max-width: 320px;
   }
 
   .project-card a:first-child {
@@ -932,6 +1003,42 @@ footer {
     right: 1rem;
   }
 
+  /*OUR SERVICES*/
+
+  .our-services {
+    padding: 0;
+    margin: 8rem 0;
+    width: 100%;
+  }
+
+  .our-services h3 {
+    margin-bottom: 3rem;
+  }
+
+  .our-services .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .service {
+    max-width: 320px;
+    justify-self: center;
+  }
+
+  .service:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 320px;
+  }
+
+  .service a:first-child {
+    height: 250px;
+  }
+
   /* NEWSLETTER SECTION */
 
   .newsletter {
@@ -973,7 +1080,7 @@ footer {
     box-sizing: border-box;
   }
 
-  .post-email button {
+  .post-email .newsletter-btn {
     height: auto;
     padding: 1.35rem 2rem;
     margin-top: 0;
@@ -1019,51 +1126,44 @@ footer {
 
   /* BLOG SECTION TABLET */
 
-  .blog-section {
-    padding: 2.5rem 0;
+  .info-project h1 {
+    margin-top: 5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
   }
 
-  .blog-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  .info-project #subtitle {
+    font-size: 1.2rem;
   }
 
-  .blog-header h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .blog-header p {
+  .info-project p {
     font-size: 1rem;
   }
 
-  .blog-container {
+  .info-project p span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  /* OTHER PROJECTS TABLET */
+  .other-projects {
+    padding: 2.5rem 0;
+  }
+
+  .other-projects .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .blog-image {
-    height: 200px;
-  }
-
-  /* OTHER PROJECTS TABLET */
-
-  .other-projects {
-    padding: 2.5rem 0;
   }
 
   /* CONTACT SECTION TABLET */
 
   .contact-section {
     padding: 2.5rem 0;
+    width: 100%;
   }
 
   .contact-container {
-    max-width: 600px;
+    width: 100%;
   }
 
   .contact-container h1 {
@@ -1075,10 +1175,10 @@ footer {
 
 @media screen and (min-width: 1024px) {
   body {
-    font-size: 16px;
+    font-size: clamp(16px, 1.1vw, 18px);
     margin: 0 auto;
-    padding: 1rem 18rem;
-    max-width: 1400px;
+    padding: 2rem 12vw;
+    max-width: 1800px;
   }
 
   /* NAVEGACIÓN */
@@ -1088,6 +1188,10 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0;
+  }
+
+  .nav logo img {
+    width: clamp(120px, 10vw, 180px);
   }
 
   .menu-toggle {
@@ -1107,7 +1211,7 @@ footer {
 
   .menu {
     display: flex;
-    gap: 2rem;
+    gap: clamp(2rem, 4vw, 6rem);
     list-style: none;
     margin: 0 auto;
   }
@@ -1121,6 +1225,7 @@ footer {
     text-decoration: none;
     color: var(--primary-blue);
     font-weight: 700;
+    font-size: clamp(1rem, 1.1vw, 1.4rem);
   }
 
   .menu li a:hover {
@@ -1130,9 +1235,11 @@ footer {
   #contact-btn {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 0.7rem 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease;
   }
 
   /* HERO SECTION */
@@ -1145,20 +1252,24 @@ footer {
 
   .cta {
     flex: 1;
-    max-width: 50rem;
-    padding-right: 1rem;
+    max-width: 45rem;
+    padding-right: 2rem;
   }
 
   .cta h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 3vw, 3.2rem);
     font-weight: 700;
     margin-bottom: 1.3rem;
+    margin-top: 0;
+    line-height: 1.1;
   }
 
   .cta h3 {
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
     font-weight: 450;
     margin: 0;
+    line-height: 1.5;
+    max-width: 90%;
   }
 
   .cta-btn {
@@ -1177,7 +1288,8 @@ footer {
   }
 
   .hero-img #img-1 {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     height: auto;
     z-index: 1;
   }
@@ -1186,7 +1298,7 @@ footer {
     display: block;
     position: absolute;
     z-index: 2;
-    width: 60%;
+    width: 50%;
     top: -1rem;
     left: -1.5rem;
   }
@@ -1195,23 +1307,25 @@ footer {
     display: block;
     position: absolute;
     z-index: 2;
-    width: 65%;
-    bottom: -3.2rem;
-    right: -3rem;
+    width: 50%;
+    bottom: -5.2rem;
+    right: -1rem;
   }
 
   /*PARTNERS SECTION*/
 
   .partners {
-    padding: 9rem 0 4rem;
+    padding: 5rem 0 4rem;
     align-items: center;
+    width: 100%;
   }
 
   .list-partners {
     display: flex;
     flex-wrap: nowrap;
-    gap: 3rem;
-    justify-content: center;
+    gap: 0;
+    justify-content: espace-evenly;
+    max-width: 100%;
   }
 
   /* RECENT PROJECTS SECTION */
@@ -1220,22 +1334,45 @@ footer {
     padding: 4rem 0;
   }
 
-  .recent-projects h3 {
+  .recent-projects h2 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
-  .container {
+  .recent-projects .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  }
+
+  .project-card {
+    background-color: var(--white);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .project-card a:first-child {
     display: block;
+    width: 100%;
     aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .project-card h4 {
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    margin: 0 1rem;
+    font-size: 0.95rem;
+  }
+
+  .project-card a:last-child {
+    display: block;
+    margin: 1rem 0 1.5rem 1rem;
+    font-weight: 700;
   }
 
   /* TESTIMONIALS SECTION */
@@ -1293,54 +1430,103 @@ footer {
     right: 1rem;
   }
 
-  /* SERVICES SECTION */
+  /*OUR SERVICES*/
+
   .our-services {
     padding: 4rem 0;
   }
 
-  .our-services h3 {
+  .our-services h2 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .our-services .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 2rem;
   }
 
   .service {
-    padding: 2.5rem;
+    background-color: var(--white);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .icon-circle {
-    width: 4.5rem;
-    height: 4.5rem;
+  .service a:first-child {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #f0f0f0;
   }
+
+  .service h4 {
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .service p {
+    margin: 0 1rem;
+    font-size: 0.95rem;
+  }
+
+  .service a:last-child {
+    display: block;
+    margin: 1rem 0 1.5rem 1rem;
+    font-weight: 700;
+  }
+
   /* NEWSLETTER SECTION */
 
   .newsletter {
     padding: 4rem 0;
-    margin: 3rem 0;
+    margin: 2rem 0;
+    width: calc(100% + 8rem);
+    margin-left: -4rem;
+    margin-right: -4rem;
   }
 
   .newsletter h3 {
-    font-size: 2.2rem;
+    margin-top: 1.5rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  .newsletter p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 1.2rem;
   }
 
   .post-email {
     flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 70%;
     max-width: 600px;
+    gap: 1rem;
+    margin: 3.5rem auto 2.8rem;
   }
 
   .post-email input {
     flex: 1;
+    max-width: 350px;
+    height: auto;
+    padding: 1.4rem 1rem;
+    line-height: normal;
+    box-sizing: border-box;
   }
 
-  .post-email button {
-    align-self: auto;
+  .post-email .newsletter-btn {
+    height: auto;
+    padding: 1.35rem 2rem;
+    margin-top: 0;
+    align-self: stretch;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* FOOTER */
@@ -1351,12 +1537,16 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     margin: 5rem 0;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .footer-info {
     text-align: left;
     max-width: 300px;
     margin-bottom: 0;
+    align-items: flex-start;
   }
 
   .footer-services {
@@ -1365,7 +1555,7 @@ footer {
 
   .site-map {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .site-map li {
@@ -1374,70 +1564,33 @@ footer {
 
   /* BLOG SECTION DESKTOP */
 
-  .blog-section {
-    padding: 4rem 0;
-  }
-
-  .blog-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .blog-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .blog-header p {
-    font-size: 1.1rem;
-  }
-
-  .blog-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .blog-card {
-    flex-direction: column;
-  }
-
-  .blog-image {
-    height: 250px;
-  }
-
-  .blog-card h3 {
-    font-size: 1.4rem;
-  }
-
   /* OTHER PROJECTS DESKTOP */
 
   .other-projects {
     padding: 4rem 0;
   }
 
+  .other-projects .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
   /* CONTACT SECTION DESKTOP */
 
   .contact-section {
     padding: 4rem 0;
+    width: 100%;
   }
 
   .contact-container {
-    max-width: 800px;
+    max-width: 100%;
   }
 
   .contact-container h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
     margin-bottom: 3rem;
-  }
-
-  .contact-form {
-    gap: 2rem;
   }
 
   .submit-btn {

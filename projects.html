@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
-  <body>
+  <body class="inner-page">
     <nav>
       <a href="/index.html" id="logo"
         ><img src="/images/logos/circle.svg" alt="Circle Agency Logo"
@@ -35,30 +35,34 @@
     </nav>
 
     <!-- BLOG SECTION WITH API DATA -->
-    <section class="blog-section">
-      <h1>Entrada API</h1>
-    </section>
-
+    <main class="blog-project">
+      <div class="info-project">
+        <h1>Title</h1>
+        <p id="subtitle">subtitle</p>
+        <p>Completed on: <span id="date"></span></p>
+      </div>
+      <div class="content-blog"></div>
+    </main>
     <!-- OTHER PROJECTS SECTION -->
     <section class="other-projects">
       <h3>Other Projects</h3>
       <div class="container">
         <article class="project-card">
           <a href=""><img src="/images/projects-section/1.jpg" alt="" /></a>
-          <h4>Simplify</h4>
-          <p>UI Design & App Development</p>
+          <h4>Title</h4>
+          <p>Info</p>
           <a href="">Learn More</a>
         </article>
         <article class="project-card">
           <a href=""><img src="/images/projects-section/2.jpg" alt="" /></a>
-          <h4>Dashcoin</h4>
-          <p>Web Development</p>
+          <h4>Title</h4>
+          <p>Info</p>
           <a href="">Learn More</a>
         </article>
         <article class="project-card">
           <a href=""><img src="/images/projects-section/3.jpg" alt="" /></a>
-          <h4>Vectorify</h4>
-          <p>User Experience Design</p>
+          <h4>Title</h4>
+          <p>Info</p>
           <a href="">Learn More</a>
         </article>
       </div>
@@ -98,6 +102,8 @@
         </ul>
       </div>
     </footer>
+
     <script src="/js/main.js"></script>
+    <script src="/js/api.js"></script>
   </body>
 </html>

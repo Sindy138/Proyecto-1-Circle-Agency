@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Circle Agency</title>
+    <link rel="icon" type="image/x-icon" href="/images/logos/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
@@ -23,7 +24,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#services">Services</a></li>
         </ul>
-        <a href="/contact.html" id="contact-btn">Contact Us</a>
+        <a href="/pages/contact.html" id="contact-btn">Contact Us</a>
       </div>
       <div class="mobile-menu">
         <button class="menu-toggle" id="mobile-menu">
@@ -93,24 +94,24 @@
     <section class="recent-projects" id="projects">
       <h2>Recent Projects</h2>
       <div class="container">
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/1.jpg" alt="" /></a>
+        <a href="/pages/projects.html?id=1" class="project-card">
+          <img src="/images/projects-section/1.jpg" alt="Simplify project" />
           <h4>Simplify</h4>
           <p>UI Design & App Development</p>
-          <a href="projects.html?id=1">Learn More</a>
-        </article>
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/2.jpg" alt="" /></a>
+          <span>Learn More</span>
+        </a>
+        <a href="/pages/projects.html?id=2" class="project-card">
+          <img src="/images/projects-section/2.jpg" alt="Dashcoin project" />
           <h4>Dashcoin</h4>
           <p>Web Development</p>
-          <a href="projects.html?id=2">Learn More</a>
-        </article>
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/3.jpg" alt="" /></a>
+          <span>Learn More</span>
+        </a>
+        <a href="/pages/projects.html?id=3" class="project-card">
+          <img src="/images/projects-section/3.jpg" alt="Vectorify project" />
           <h4>Vectorify</h4>
           <p>User Experience Design</p>
-          <a href="projects.html?id=3">Learn More</a>
-        </article>
+          <span>Learn More</span>
+        </a>
       </div>
     </section>
     <section class="testimonials">
@@ -187,12 +188,14 @@
           />
           <input type="email" placeholder="Enter your email" />
         </div>
-        <a href="/contact.html" class="newsletter-btn">Suscribe</a>
+        <a href="/pages/contact.html" class="newsletter-btn">Suscribe</a>
       </form>
     </section>
     <footer>
       <div class="footer-info">
-        <img src="/images/logos/circle.svg" alt="logo Circle Agency" />
+        <a href="/index.html">
+          <img src="/images/logos/circle.svg" alt="logo Circle Agency" />
+        </a>
         <p>2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
       </div>
       <div class="footer-services">
@@ -207,5 +210,6 @@
       </div>
     </footer>
     <script src="/js/main.js"></script>
+    <script src="/js/scroll.js"></script>
   </body>
 </html>

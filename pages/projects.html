@@ -3,25 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+    <script>
+      fetch(window.location.href)
+        .then(response => {
+          if (response.status === 404) {
+            window.location.href = "404.html";
+        }
+      });
+    </script>
+    -->
     <title>Projects - Circle Agency</title>
+    <link rel="icon" type="image/x-icon" href="../images/logos/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body class="inner-page">
     <nav>
-      <a href="/index.html" id="logo"
-        ><img src="/images/logos/circle.svg" alt="Circle Agency Logo"
+      <a href="../index.html" id="logo"
+        ><img src="../images/logos/circle.svg" alt="Circle Agency Logo"
       /></a>
       <div class="nav-content">
         <ul class="menu">
-          <li><a href="/index.html">Home</a></li>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="">Projects</a></li>
-          <li><a href="/index.html#services">Services</a></li>
+          <li><a href="../index.html#services">Services</a></li>
         </ul>
         <a href="" id="contact-btn">Contact Us</a>
       </div>
@@ -47,24 +58,24 @@
     <section class="other-projects">
       <h3>Other Projects</h3>
       <div class="container">
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/1.jpg" alt="" /></a>
+        <a href="#" class="project-card">
+          <img src="../images/projects-section/1.jpg" alt="Project" />
           <h4>Title</h4>
           <p>Info</p>
-          <a href="">Learn More</a>
-        </article>
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/2.jpg" alt="" /></a>
+          <span>Learn More</span>
+        </a>
+        <a href="#" class="project-card">
+          <img src="../images/projects-section/2.jpg" alt="Project" />
           <h4>Title</h4>
           <p>Info</p>
-          <a href="">Learn More</a>
-        </article>
-        <article class="project-card">
-          <a href=""><img src="/images/projects-section/3.jpg" alt="" /></a>
+          <span>Learn More</span>
+        </a>
+        <a href="#" class="project-card">
+          <img src="../images/projects-section/3.jpg" alt="Project" />
           <h4>Title</h4>
           <p>Info</p>
-          <a href="">Learn More</a>
-        </article>
+          <span>Learn More</span>
+        </a>
       </div>
     </section>
 
@@ -75,7 +86,7 @@
       <form action="post" class="post-email">
         <div class="input-wrapper">
           <img
-            src="/images/newsletter/icon/mail.svg"
+            src="../images/newsletter/icon/mail.svg"
             alt="email icon"
             class="input-icon"
           />
@@ -88,7 +99,7 @@
     <!-- FOOTER -->
     <footer>
       <div class="footer-info">
-        <img src="/images/logos/circle.svg" alt="logo Circle Agency" />
+        <img src="../images/logos/circle.svg" alt="logo Circle Agency" />
         <p>2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
       </div>
       <div class="footer-services">
@@ -103,7 +114,7 @@
       </div>
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/api.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/api.js"></script>
   </body>
 </html>

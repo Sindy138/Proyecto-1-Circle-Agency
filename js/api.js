@@ -49,15 +49,14 @@ function renderOtherProjects(allProjects, currentId) {
 
   // Tomamos solo los 3 primeros para mantener el diseño
   filteredProjects.slice(0, 3).forEach((project) => {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
     card.className = "project-card";
+    card.href = `projects.html?id=${project.uuid}`;
     card.innerHTML = `
-            <a href="projects.html?id=${project.uuid}">
-                <img src="${project.image}" alt="${project.name}" />
-            </a>
+            <img src="${project.image}" alt="${project.name}" />
             <h4>${project.name}</h4>
             <p>${project.description}</p>
-            <a href="projects.html?id=${project.uuid}">Learn More</a>
+            <span>Learn More</span>
         `;
     container.appendChild(card);
   });

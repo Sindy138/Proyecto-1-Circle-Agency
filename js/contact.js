@@ -1,5 +1,6 @@
 /**
  * ContactForm - Manejo validación, estados de error y mensajes personalizados
+ * Incluye restricciones de integridad de datos
  */
 
 class ContactForm {
@@ -8,11 +9,50 @@ class ContactForm {
     if (!this.form) return;
 
     this.fields = this.form.querySelectorAll("[data-field]");
+
+    // Mensajes de error - Validación de relleno
     this.errorMessages = {
       NAME: "Please, complete the field NAME with your name.",
       EMAIL: "Please, complete the field EMAIL with your email.",
       PHONE: "Please, complete the field PHONE with your phone number.",
       MESSAGE: "Please, complete the field MESSAGE with your message.",
+    };
+
+    // Restricciones de integridad de datos
+    this.integrityRules = {
+      NAME: {
+        minLength: 3,
+        maxLength: 50,
+        pattern: /^[a-zA-Z\s]+$/, // Solo letras y espacios
+        errorMessages: {
+          minLength: "Name must be at least 3 characters.",
+          maxLength: "Name cannot exceed 50 characters.",
+          pattern: "Name can only contain letters and spaces.",
+        },
+      },
+      EMAIL: {
+        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        errorMessages: {
+          pattern: "Please enter a valid email address.",
+        },
+      },
+      PHONE: {
+        pattern: /^\+\d{1,3}\s\d{3}\s\d{3}\s\d{3}$/, // +34 666 777 888
+        errorMessages: {
+          pattern:
+            "Phone must follow the format +CC XXX XXX XXX (e.g., +34 666 777 888).",
+        },
+      },
+      MESSAGE: {
+        minLength: 10,
+        maxLength: 500,
+        pattern: /^[^<>]*$/, // No permite < y >
+        errorMessages: {
+          minLength: "Message must be at least 10 characters.",
+          maxLength: "Message cannot exceed 500 characters.",
+          pattern: "Message contains invalid characters.",
+        },
+      },
     };
 
     this.init();
@@ -60,22 +100,53 @@ class ContactForm {
 
   validateField(field) {
     const value = field.value.trim();
-    const formGroup = field.closest(".form-group");
     const fieldName = field.getAttribute("data-field");
 
+    // Validación 1: Campo requerido (relleno)
     if (!value) {
       this.showError(field, this.errorMessages[fieldName]);
       return false;
     }
 
-    // Validación adicional para email
-    if (field.type === "email" && !this.isValidEmail(value)) {
-      this.showError(field, this.errorMessages[fieldName]);
-      return false;
+    // Validación 2: Restricciones de integridad de datos
+    const rules = this.integrityRules[fieldName];
+    if (rules) {
+      const integrityError = this.validateIntegrity(value, fieldName, rules);
+      if (integrityError) {
+        this.showError(field, integrityError);
+        return false;
+      }
     }
 
     this.clearError(field);
     return true;
+  }
+
+  /**
+   * Valida las restricciones de integridad de datos
+   * @param {string} value - Valor a validar
+   * @param {string} fieldName - Nombre del campo
+   * @param {Object} rules - Reglas de validación
+   * @returns {string|null} - Mensaje de error o null si es válido
+   */
+
+  validateIntegrity(value, fieldName, rules) {
+    // Validar longitud mínima
+    if (rules.minLength && value.length < rules.minLength) {
+      return rules.errorMessages.minLength;
+    }
+
+    // Validar longitud máxima
+    if (rules.maxLength && value.length > rules.maxLength) {
+      return rules.errorMessages.maxLength;
+    }
+
+    // Validar patrón
+    if (rules.pattern && !rules.pattern.test(value)) {
+      return rules.errorMessages.pattern;
+    }
+
+    return null;
   }
 
   /**
@@ -110,14 +181,16 @@ class ContactForm {
   }
 
   /**
-   * Valida que un email tenga formato correcto
-   * @param {string} email - El email a validar
-   * @returns {boolean}
+   * Sanitiza datos para evitar inyecciones HTML/scripts
+   * Método profesional y limpio
+   * @param {string} data - Datos a sanitizar
+   * @returns {string} - Datos sanitizados
    */
 
-  isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  sanitizeData(data) {
+    const div = document.createElement("div");
+    div.textContent = data;
+    return div.innerHTML;
   }
 
   /**
@@ -142,17 +215,21 @@ class ContactForm {
   }
 
   /**
-   * Envía el formulario (aquí se puede agregar lógica adicional)
+   * Envía el formulario con datos sanitizados
    */
 
   submitForm() {
     const formData = {
-      name: document.getElementById("full-name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      message: document.getElementById("message").value,
+      name: this.sanitizeData(
+        document.getElementById("full-name").value.trim(),
+      ),
+      email: this.sanitizeData(document.getElementById("email").value.trim()),
+      phone: this.sanitizeData(document.getElementById("phone").value.trim()),
+      message: this.sanitizeData(
+        document.getElementById("message").value.trim(),
+      ),
     };
-    console.log(formData);
+    console.log("Datos enviados (sanitizados):", formData);
     this.form.reset();
   }
 }
